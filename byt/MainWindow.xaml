@@ -1,0 +1,40 @@
+﻿<Window x:Class="TwojaAplikacja.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Twoja Aplikacja" Height="400" Width="600">
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+            <!-- Lista kategorii -->
+            <ListView Name="CategoryListView" Width="200" SelectionChanged="CategoryListView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Kategoria" DisplayMemberBinding="{Binding Name}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <!-- Lista podkategorii -->
+            <ListView Name="SubcategoryListView" Width="200" SelectionChanged="SubcategoryListView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Podkategoria" DisplayMemberBinding="{Binding Name}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <!-- Lista elementów -->
+            <ListView Name="ElementListView" Width="200">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Element" DisplayMemberBinding="{Binding Name}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <!-- Wyświetlanie szczegółów -->
+            <StackPanel Name="DetailsPanel" Width="200" Visibility="Collapsed">
+                <TextBlock Name="DetailsText" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
